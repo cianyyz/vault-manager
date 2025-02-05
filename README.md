@@ -3,12 +3,13 @@
 
 This program is not audited and not intended for mainnet use as is. Please read security issues.
 
+This is a work in progress but builds and passes tests.
 
 # Overview
 
-This is a Solana vault program which supports DEX swapping and concentrated liquidity operations via Orca.
+This is a Solana vault program which supports DEX swapping and [concentrated liquidity](https://cianyyz.mixa.site/CLM/Concentrated%20Liquidity) operations via [Orca](https://www.orca.so).
 
-The vault is divided into shares which can be minted when new funds are deposited into the vault. And withdrawn for funds later.
+The vault is divided into shares which can be minted when new funds are deposited into the vault and withdrawn for funds.
 
 This program was built to create a trustless system which could support a [Concentrated Liquidity Manager](https://cianyyz.mixa.site/CLM/CLManager%20Program). Allowing for users to get high yields while being reducing risk to token price volatility.
 
