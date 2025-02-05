@@ -1,5 +1,5 @@
 
-# Concentrated Liqduity Manager Vault Contract
+# Concentrated Liquidity Manager Vault Contract
 
 This program is not audited and not intended for mainnet use as is. Please read security issues.
 
