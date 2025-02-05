@@ -23,7 +23,7 @@ This vault uses [Cross Program Invocation, CPI](https://solana.com/docs/core/cpi
 
 Prices are derived from using whirlpool tick indexes instead of relying on oracles. There are price manipulation concerns with the use of [oracles](https://chain.link/education/blockchain-oracles) such as [flash loan attacks.](https://www.aon.com/en/insights/cyber-labs/flash-loan-attacks-a-case-study).
 
-Unique bumps are used to derive PDA addresses to avoid [sea level attacks](https://github.com/coral-xyz/sealevel-attacks/tree/master) such as [bump seed canonicalization exploits](https://github.com/etherfuse/solana-course/blob/main/content/bump-seed-canonicalization.md)
+[Unique bumps](https://solana.com/docs/core/pda#canonical-bump) are used to derive PDA addresses to avoid [sea level attacks](https://github.com/coral-xyz/sealevel-attacks/tree/master) such as [bump seed canonicalization exploits](https://github.com/etherfuse/solana-course/blob/main/content/bump-seed-canonicalization.md)
 
 ## Known Security Issues
 
@@ -50,6 +50,13 @@ cd tests
 ```
 anchor test --skip-local-validator
 ```
+
+## Documentation
+
+```
+cargo doc --no-deps --open
+```
+
 
 ### Current Limitations:
 - Whirlpools must be Token/USD. This vault does not rely on oracles so it assumes all whirlpools have a USD stablecoin and get price directly from whirlpool.

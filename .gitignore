@@ -20,4 +20,5 @@ test-ledger/
 **/target/*
 !**/target/deploy
 **/target/deploy/*
-!**/target/deploy/whirlpool_cpi_sample-keypair.json
+
+!**/target/deploy/vault-keypair.json
