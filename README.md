@@ -84,6 +84,6 @@ cargo doc --no-deps --open
 - Rust Helper Services
 
 ### Acknowledgements and References:
-Orca CPI usage, instructions, and testing: https://github.com/orca-so/whirlpool-cpi-sample/tree/main
-Orca Math: https://github.com/orca-so/whirlpools/tree/main
-Initialize and Bump Logic: https://github.com/Clish254/sol-vault/tree/main
+* Orca CPI usage, instructions, and testing: https://github.com/orca-so/whirlpool-cpi-sample/tree/main
+* Orca Math: https://github.com/orca-so/whirlpools/tree/main
+* Initialize and Bump Logic: https://github.com/Clish254/sol-vault/tree/main
