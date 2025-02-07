@@ -12,10 +12,12 @@ use anchor_lang::prelude::*;
 mod instructions;
 mod state;
 mod orca;
+mod jupiter;
 
 use instructions::*;
 use state::*;
 use orca::*;
+use jupiter::*;
 
 
 declare_id!("EY1mGiYQgaLZW2fNNUjYZRNRqjDgXGZAST1endGDxjKP");
@@ -407,6 +409,29 @@ pub mod vault {
             ctx,
             start_tick_index,
         )
+    }
+
+    /// Executes a token swap through Jupiter Aggregator
+    /// 
+    /// Admin-only instruction to perform a token swap using Jupiter's aggregated routes.
+    ///
+    /// # Parameters
+    /// * `ctx` - Context object containing all required accounts
+    /// * `amount_in` - Amount of input tokens to swap
+    /// * `minimum_amount_out` - Minimum amount of output tokens to receive
+    /// * `route` - Jupiter swap route to execute
+    pub fn proxy_jupiter_swap(
+        ctx: Context<JupiterSwapAccounts>,
+        amount_in: u64,
+        minimum_amount_out: u64,
+        route: Vec<jupiter_cpi::jupiter_override::Swap>,
+    ) -> Result<()> {
+        require_keys_eq!(
+            ctx.accounts.authority.key(),
+            OWNER.parse::<Pubkey>().unwrap(),
+            VaultError::UnauthorizedAccess
+        );
+        jupiter::swap::jupiter_swap(ctx, amount_in, minimum_amount_out, route)
     }
 }
 
