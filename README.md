@@ -7,7 +7,7 @@ This is a work in progress but builds and passes tests.
 
 # Overview
 
-This is a Solana vault program which supports DEX swapping and [concentrated liquidity](https://cianyyz.mixa.site/CLM/Concentrated%20Liquidity) operations via [Orca](https://www.orca.so).
+This is a Solana vault program which supports DEX swapping via [Jupiter](https://jup.ag) and [concentrated liquidity](https://cianyyz.mixa.site/CLM/Concentrated%20Liquidity) operations via [Orca](https://www.orca.so).
 
 The vault is divided into shares which can be minted when new funds are deposited into the vault and withdrawn for funds.
 

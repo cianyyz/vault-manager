@@ -188,40 +188,6 @@ pub mod vault {
         orca::verify_account::handler_position(ctx)
     }
 
-    /// Executes a swap through Orca Whirlpool
-    /// 
-    /// Admin-only instruction to perform a token swap using Orca's Whirlpool DEX.
-    ///
-    /// # Parameters
-    /// * `ctx` - Context object containing all required accounts
-    /// * `amount` - Amount of tokens to swap
-    /// * `other_amount_threshold` - Minimum amount of tokens to receive
-    /// * `sqrt_price_limit` - Price limit for the swap
-    /// * `amount_specified_is_input` - Whether the amount specified is input or output
-    /// * `a_to_b` - Direction of the swap (token A to B or B to A)
-    pub fn proxy_swap(
-        ctx: Context<ProxySwap>,
-        amount: u64,
-        other_amount_threshold: u64,
-        sqrt_price_limit: u128,
-        amount_specified_is_input: bool,
-        a_to_b: bool,
-    ) -> Result<()> {
-        require_keys_eq!(
-            ctx.accounts.signer_account.key(),
-            OWNER.parse::<Pubkey>().unwrap(),
-            VaultError::UnauthorizedAccess
-        );
-        orca::proxy_swap::handler(
-            ctx,
-            amount,
-            other_amount_threshold,
-            sqrt_price_limit,
-            amount_specified_is_input,
-            a_to_b,
-        )
-    }
-
     /// Opens a new position in an Orca Whirlpool
     /// 
     /// Admin-only instruction to open a new liquidity position.

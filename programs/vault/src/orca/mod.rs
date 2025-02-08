@@ -1,7 +1,6 @@
 
 
 pub mod verify_account;
-pub mod proxy_swap;
 pub mod proxy_open_position;
 pub mod proxy_increase_liquidity;
 pub mod proxy_decrease_liquidity;
@@ -15,7 +14,6 @@ pub mod position_estimate;
 
 
 pub use verify_account::*;
-pub use proxy_swap::*;
 pub use proxy_open_position::*;
 pub use proxy_increase_liquidity::*;
 pub use proxy_decrease_liquidity::*;
