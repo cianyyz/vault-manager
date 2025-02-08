@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::{
     associated_token::AssociatedToken,
-    token::{self, transfer, Mint, Token, TokenAccount, Transfer, SetAuthority, spl_token::instruction::AuthorityType},
+    token::{transfer, Mint, Token, TokenAccount, Transfer},
 };
 use crate::state::*;
 use crate::state::VaultBumps;
